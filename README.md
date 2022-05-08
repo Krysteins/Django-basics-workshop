@@ -31,3 +31,18 @@ The view:
      * if the capacity of the room is a positive number;
      * if the data is correct, save the new room to the database and redirect the user to the home page,
      * if they are incorrect, it should display an appropriate message to the user.
+
+# Workshop &ndash; List of all rooms
+
+A view that lists all available rooms.
+If there is no room in the database, the following message be displayed:
+** "No rooms available" **.
+
+The following information be displayed:
+* name of the room &ndash; be a link redirecting to a page with a detailed view of the room (`/ room / {id} /`),
+* room capacity,
+* room availability (information if the room is occupied),
+* projector availability,
+* edit button &ndash; redirecting to the room edition page (`/ room / modify / {id} /`).
+* delete button &ndash; redirecting to the page deleting the room (`/ room / delete / {id}`).
+* button book &ndash; redirecting to the room registration form (`/ room / reserve / {id}`).

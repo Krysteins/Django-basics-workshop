@@ -23,3 +23,8 @@ class AddRoomView(View):
         ConferenceRoom.objects.create(name=name, capacity=capacity, projector_availability=projector)
         return redirect("room-list")
 
+
+class RoomListView(View):
+    def get(self, request):
+        rooms = ConferenceRoom.objects.all()
+        return render(request, "rooms.html", context={"rooms": rooms})
