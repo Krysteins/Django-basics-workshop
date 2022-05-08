@@ -75,3 +75,44 @@ View:
     * if the data is correct, he should save the changes to the database and redirect the user to the list of all rooms,
     * if they are incorrect, he should inform the user about it
 
+# Workshop &ndash; Booking model
+
+Room booking model. Represents the room reservation for the day.
+It stores the following data:
+* date,
+* room id,
+* comment added when booking.
+
+It is linked to the room model by the relationship: one room can have multiple all-day bookings (each on a different day).
+When a room is deleted, its reservations are deleted.
+
+
+# Workshop &ndash; Reservation view
+
+Room reservation view. View:
+* is available at `/ room / reserve / {id}`, where `id` is the room id,
+* after entering with the ** GET ** method, it displays a form with the following fields:
+     * comment,
+     * date selection field,
+* after entering using the ** POST ** method:
+     * verifies that the room on a given day is not already booked,
+     * checks if the date is not from the past,
+     * save the room reservation,
+     * redirect the user to the list of all rooms.
+
+# Workshop &ndash; Detailed view of the hall
+
+A view that shows detailed information about the room.
+View:
+* displays all the data about the room:
+     * name,
+     * capacity,
+     * projector availability,
+* view all future room reservations, including comments.
+
+Provides links to:
+* room edition pages,
+* pages of removing the room,
+* room booking site.
+
+Reservations are sorted from the oldest.
