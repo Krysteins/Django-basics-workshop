@@ -46,3 +46,32 @@ The following information be displayed:
 * edit button &ndash; redirecting to the room edition page (`/ room / modify / {id} /`).
 * delete button &ndash; redirecting to the page deleting the room (`/ room / delete / {id}`).
 * button book &ndash; redirecting to the room registration form (`/ room / reserve / {id}`).
+
+# Workshop &ndash; Removing a room
+
+The view only supports the ** GET ** method.
+
+View :
+* is available at `/ room / delete / {id}`,
+* based on the `id` parameter passed in the address, searches for a room and remove it
+* finally, it redirects the user to a list of all available rooms.
+
+
+# Workshop &ndash; Modification of the hall
+
+A view that allows you to modify the parameters of the room.
+
+View:
+* is available at `/ room / modify / {id}`,
+* after entering with the ** GET ** method, he searches for a room, based on the `id` parameter provided in the address
+    and then display the form that allows you to edit:
+    * names,
+    * capacity,
+    * projector availability,
+* after entering with the ** POST ** method, checks if:
+    * capacity is greater than zero,
+    * has the name been entered,
+    * if there is no room with the given name in the database,
+    * if the data is correct, he should save the changes to the database and redirect the user to the list of all rooms,
+    * if they are incorrect, he should inform the user about it
+
